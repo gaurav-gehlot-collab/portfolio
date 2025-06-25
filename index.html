@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gaurav Gehlot | Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js" defer></script>
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <!-- AOS Animation Script -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+        });
+    </script>
+
+    <header class="navbar">
+        <nav>
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle" title="Toggle theme">
+            <i class="fas fa-moon"></i>
+        </button>
+    </header>
+
+    <main class="container">
+        <section class="profile">
+            <img src="assets/gaurav.png" alt="Gaurav Gehlot" class="avatar" data-aos="zoom-in" data-aos-delay="100" />
+            <h1 data-aos="fade-up" data-aos-delay="200">Gaurav Gehlot</h1>
+            <p class="location" data-aos="fade-up" data-aos-delay="300">
+                <i class="fa-solid fa-location-dot"></i> Gandhinagar, India
+            </p>
+            <div class="socials" data-aos="fade-up" data-aos-delay="400">
+                <a href="tel:+918849590807" title="Call"><i class="fas fa-phone"></i></a>
+                <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://linkedin.com/in/gaurav-gehlot-8816b2212" target="_blank"><i
+                        class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/gauravgehlot" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://github.com/gauravgehlot" target="_blank"><i class="fab fa-github"></i></a>
+            </div>
+        </section>
+
+
+        <section class="card" id="about" data-aos="zoom-in">
+            <h2>About Me</h2>
+            <p>I’m a passionate Mobile Application Developer with nearly 3 years of experience in developing scalable
+                applications using Flutter and native iOS (Swift). My focus lies in building user-centric mobile apps
+                with robust backend integration and clean UI/UX.</p>
+            <p>I enjoy solving real-world problems through technology and have a growing interest in DevOps and backend
+                services using Node.js. I constantly strive to expand my skill set by exploring new frameworks and tools
+                in mobile development and cloud infrastructure.</p>
+        </section>
+
+        <section class="card" id="education" data-aos="zoom-in">
+            <h2>Education</h2>
+            <p><strong>B.Tech in Computer Science and Engineering</strong><br>Charotar University of Science and
+                Technology, Anand (2019–2022) – CGPA: 7.85</p>
+            <p><strong>Diploma in Computer Engineering</strong><br>Government Polytechnic, Jamnagar (2016–2019) – CGPA:
+                7.29</p>
+        </section>
+
+        <section class="card" id="experience" data-aos="zoom-in">
+            <h2>Experience</h2>
+            <p><strong>Mobile Application Developer – Prismetric Pvt. Ltd.</strong><br><em>Aug 2022 – Present |
+                    Gandhinagar</em></p>
+            <ul>
+                <li>Developing scalable mobile applications using Flutter and Swift.</li>
+                <li>Integrating third-party services like Google Maps, Stripe, Google console and Firebase.</li>
+                <li>Contributing to REST API integration and backend logic in NodeJS,Python.</li>
+                <li>Contributing with Frontend using ReactJS,HTMl,Bootstrap,CSS.</li>
+                <li>Participating in Agile development cycles and code reviews.</li>
+            </ul>
+
+            <p><strong>iOS Developer Intern – DRC Systems India Pvt. Ltd.</strong><br><em>Dec 2021 – Jul 2022</em></p>
+            <ul>
+                <li>Worked with Swift and UIKit to build clean and reusable components.</li>
+                <li>Gained exposure to RESTful APIs, JSON handling, and MVC pattern.</li>
+                <li>Assisted in UI improvements, bug fixing, and performance testing.</li>
+            </ul>
+        </section>
+
+        <section class="card" id="projects" data-aos="zoom-in">
+            <h2>Projects</h2>
+            <ul>
+                <li>
+                    <strong>Elev8tion (iOS Native)</strong><br>
+                    A Swift-based fitness app where I worked as the dedicated iOS developer from project initiation to
+                    App Store deployment. I implemented chat functionality, push notifications using Firebase, deep
+                    linking, Google Maps integration, Apple and Google Sign-In, unit testing, and more.
+                </li>
+                <li>
+                    <strong>Jillii (iOS Native)</strong><br>
+                    Contributed to chat features, Firebase push notifications, deep linking, search-based Google Maps
+                    integration, and an image editor module using UIKit and Swift.
+                </li>
+                <li>
+                    <strong>vTeach Student / Teacher (Flutter)</strong><br>
+                    A Flutter-based dual-role education platform where I implemented UI enhancements, REST API
+                    integrations, iOS push notifications, and real-time video calling using VoIP.
+                </li>
+                <li>
+                    <strong>Foodiv (Flutter SaaS – Vendor / Delivery / Customer)</strong><br>
+                    A multi-role Flutter application. Key contributions include Bluetooth thermal printer integration
+                    for invoice/KOT printing, WhatsApp invoice sharing, and Firebase push notifications.
+                </li>
+                <li>
+                    <strong>Attendance System (NodeJS, ReactJS, MongoDB)</strong><br>
+                    Built RESTful APIs using Node.js and integrated frontend modules (leave & holiday calendar) using
+                    React.js, Bootstrap, HTML/CSS, and MongoDB for employee management.
+                </li>
+                <li>
+                    <strong>Face Recognition System (Python + FastAPI)</strong><br>
+                    Developed a custom face recognition system using the <code>face_recognition</code> library
+                    (C++-based), built APIs with FastAPI to register and recognize faces, and integrated the Dlib model
+                    for high-accuracy detection.
+                </li>
+            </ul>
+
+        </section>
+
+        <section class="card" id="skills" data-aos="zoom-in">
+            <h2>Technical Skills</h2>
+            <p>
+                <strong>Languages:</strong> Swift, Dart, JavaScript, SQL<br>
+                <strong>Frameworks & Tools:</strong> Flutter, React.js, Node.js, Firebase, Stripe, REST APIs, Git,
+                Xcode, Docker<br>
+                <strong>Practices:</strong> Agile, MVC/MVVM, App Store Deployment, GitHub Actions, CI/CD
+            </p>
+        </section>
+
+        <section class="card" id="contact" data-aos="zoom-in">
+            <h2>Contact</h2>
+            <p>
+                <i class="fa-solid fa-envelope"></i>
+                <span class="click-text" onclick="window.location.href='mailto:gauravgehlot1922@gmail.com'">
+                    gauravgehlot1922@gmail.com
+                </span>
+            </p>
+            <p>
+                <i class="fa-solid fa-phone"></i>
+                <span class="click-text" onclick="window.location.href='tel:+918849590807'">
+                    +91 88495 90807
+                </span>
+            </p>
+            <p>
+                <i class="fab fa-linkedin"></i>
+                <span class="click-text"
+                    onclick="window.open('https://linkedin.com/in/gaurav-gehlot-8816b2212', '_blank')">
+                    linkedin.com/in/gaurav-gehlot
+                </span>
+            </p>
+
+        </section>
+
+    </main>
+    <!-- AOS Animation Script -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+        });
+    </script>
+
+</body>
+
+</html>
