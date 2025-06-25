@@ -23,3 +23,11 @@ toggleBtn.addEventListener('click', () => {
   localStorage.setItem('theme', next);
   updateIcon(next);
 });
+
+// Mobile menu toggle
+const menuToggle = document.getElementById('menu-toggle');
+const navMenu = document.getElementById('nav-menu');
+
+menuToggle.addEventListener('click', () => {
+  navMenu.classList.toggle('show');
+});
