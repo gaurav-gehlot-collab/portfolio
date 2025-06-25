@@ -3,25 +3,24 @@
 :root {
   --bg: #ffffff;
   --text: #000000;
-  --heading: #3FA9F5; /* Navy Blue */
+  --heading: #3FA9F5;
   --accent: #1f2a44;
   --hover-bg: #3FA9F5;
   --hover-text: #ffffff;
   --card-bg: #f5f9ff;
-  --bullet-color: #1f2a44; /* Navy for light mode */
+  --bullet-color: #1f2a44;
 }
 
 [data-theme="dark"] {
   --bg: #0d1117;
   --text: #ffffff;
-  --heading: #3FA9F5; /* Light Blue */
+  --heading: #3FA9F5;
   --accent: #1f2a44;
   --hover-bg: #3FA9F5;
   --hover-text: #ffffff;
   --card-bg: #161b22;
-   --bullet-color: #ffffff; /* White for dark mode */
+  --bullet-color: #ffffff;
 }
-
 
 html {
   scroll-behavior: smooth;
@@ -55,19 +54,32 @@ body {
   background-color: var(--card-bg);
   padding: 0.7rem 1rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: nowrap;
 }
 
-.navbar nav {
-  flex: 1;
+
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text);
+  cursor: pointer;
+  margin-right: auto;
+}
+
+#nav-menu {
   display: flex;
+  flex: 1;
   justify-content: center;
+  align-items: center;
   gap: 1.2rem;
 }
 
-.navbar nav a {
+#nav-menu a {
   color: var(--text);
   text-decoration: none;
   font-weight: 500;
@@ -77,7 +89,7 @@ body {
   border-radius: 4px;
 }
 
-.navbar nav a:hover {
+#nav-menu a:hover {
   background-color: var(--hover-bg);
   color: var(--hover-text);
 }
@@ -88,14 +100,12 @@ body {
   font-size: 1.2rem;
   cursor: pointer;
   color: var(--text);
-  margin-left: auto;
   transition: background-color 0.3s, color 0.3s;
   padding: 6px 10px;
   border-radius: 4px;
 }
 
 .theme-toggle:hover {
-  /* background-color: var(--hover-bg); */
   color: var(--heading);
 }
 
@@ -179,7 +189,6 @@ h1 {
   margin-left: -1em;
 }
 
-
 .card a {
   color: var(--accent);
   text-decoration: none;
@@ -211,8 +220,8 @@ h1 {
   background-color: var(--hover-bg);
   color: var(--hover-text);
 }
-/* Contact links should behave like normal text */
 
+/* === Clickable text (Contact section) === */
 .click-text {
   cursor: pointer;
   color: inherit;
@@ -224,6 +233,48 @@ h1 {
   text-decoration: none;
 }
 
+/* === Responsive: Mobile Navbar === */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  #nav-menu {
+    position: absolute;
+    top: 60px; /* Adjust based on navbar height */
+    left: 16px;
+    background-color: var(--card-bg);
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 0.6rem 1rem;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    z-index: 99;
+  }
+
+  #nav-menu.show {
+    display: flex;
+  }
+
+  #nav-menu a {
+    font-size: 1rem;
+    padding: 6px 10px;
+  }
+
+  .theme-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    margin: 0;
+  }
+}
 
 
-    
