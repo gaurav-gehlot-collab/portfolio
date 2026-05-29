@@ -2,6 +2,15 @@
 // 📂 PORTFOLIO DATA MATRIX (Editable Area)
 // ==========================================
 const portfolioData = {
+  profile: {
+    name: "Gaurav Gehlot",
+    role: "Mobile Application Developer",
+    location: "Gandhinagar, India",
+    phone: "+918849590807",
+    email: "gauravgehlot1922@gmail.com",
+    linkedin: "https://linkedin.com/in/gaurav-gehlot-8816b2212",
+    github: "https://github.com/gaurav-gehlot-collab"
+  },
   about: [
     "I’m a passionate Mobile Application Developer with nearly 3 years of experience in developing scalable applications using Flutter and native iOS (Swift). My focus lies in building user-centric mobile apps with robust backend integration and clean UI/UX.",
     "I enjoy solving real-world problems through technology and have a growing interest in DevOps and backend services using Node.js. I constantly strive to expand my skill set by exploring new frameworks and tools in mobile development and cloud infrastructure."
@@ -61,19 +70,19 @@ const portfolioData = {
     {
       title: "Elev8tion",
       platform: "iOS Native",
-      tags: ["Swift", "Firebase", "Maps", "CI/CD"],
+      tags: ["Swift", "Firebase", "Maps"],
       desc: "Worked as the dedicated iOS developer from execution to App Store deployment. Implemented real-time chat, Firebase push notifications, deep linking, and unit testing."
     },
     {
       title: "Jillii",
       platform: "iOS Native",
-      tags: ["Swift", "UIKit", "Firebase", "Core Graphics"],
+      tags: ["Swift", "UIKit", "Firebase"],
       desc: "Contributed end-to-end chat channels, Firebase infrastructure, Google Maps proximity search, and a custom native image editing canvas module."
     },
     {
       title: "vTeach Student / Teacher",
       platform: "Flutter App",
-      tags: ["Flutter", "Dart", "VoIP", "WebRTC"],
+      tags: ["Flutter", "Dart", "VoIP"],
       desc: "A cross-platform dual application layout. Built scalable interface modules, synchronous REST API ingestion frameworks, and cross-platform WebRTC/VoIP video calls."
     },
     {
@@ -81,12 +90,6 @@ const portfolioData = {
       platform: "Flutter SaaS",
       tags: ["Flutter", "Hardware Integration", "SaaS"],
       desc: "Multi-tenant layout mapping vendors, delivery nodes, and clients. Engineered low-level ESC/POS Bluetooth thermal printing support and automated transaction invoice distribution."
-    },
-    {
-      title: "FileTranslator",
-      platform: "Python Ecosystem",
-      tags: ["Python", "Flask", "Streamlit", "Tesseract"],
-      desc: "Full stack text extraction platform scaling multi-format parsing (PDF, DOC, images) featuring local edge OCR processing and integrated translation caches."
     }
   ],
   skills: {
@@ -97,81 +100,95 @@ const portfolioData = {
 };
 
 // ==========================================
-// 🚀 DYNAMIC INJECTION RENDER ENGINE
+// 🚀 SAFE DYNAMIC INJECTION ENGINE
 // ==========================================
 document.addEventListener("DOMContentLoaded", () => {
-  renderAbout();
-  renderEducation();
-  renderExperience();
-  renderProjects();
-  renderSkills();
+  try {
+    renderAbout();
+    renderEducation();
+    renderExperience();
+    renderProjects();
+    renderSkills();
+  } catch (error) {
+    console.error("Rendering failed somewhere:", error);
+  }
 });
 
 function renderAbout() {
   const container = document.getElementById("about-content");
-  container.innerHTML = portfolioData.about.map(p => `<p class="about-para">${p}</p>`).join("");
+  if (container) {
+    container.innerHTML = portfolioData.about.map(p => `<p class="about-para" style="margin-bottom: 1rem; color: var(--text-muted);">${p}</p>`).join("");
+  }
 }
 
 function renderEducation() {
   const container = document.getElementById("education-list");
-  container.innerHTML = portfolioData.education.map(edu => `
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-content">
-        <h3>${edu.degree}</h3>
-        <p class="timeline-sub">${edu.institution} | <span>${edu.period}</span></p>
-        <span class="metric-badge">${edu.metrics}</span>
+  if (container) {
+    container.innerHTML = portfolioData.education.map(edu => `
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3 style="font-size: 1.15rem; font-weight: 600;">${edu.degree}</h3>
+          <p class="timeline-sub">${edu.institution} | <span>${edu.period}</span></p>
+          <span class="metric-badge">${edu.metrics}</span>
+        </div>
       </div>
-    </div>
-  `).join("");
+    `).join("");
+  }
 }
 
 function renderExperience() {
   const container = document.getElementById("experience-list");
-  container.innerHTML = portfolioData.experience.map(exp => `
-    <div class="timeline-item">
-      <div class="timeline-dot"></div>
-      <div class="timeline-content">
-        <h3>${exp.role}</h3>
-        <p class="timeline-sub">${exp.company} — <em>${exp.location}</em> | <span>${exp.period}</span></p>
-        <ul class="experience-bullets">
-          ${exp.bullets.map(b => `<li>${b}</li>`).join("")}
-        </ul>
+  if (container) {
+    container.innerHTML = portfolioData.experience.map(exp => `
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3 style="font-size: 1.15rem; font-weight: 600;">${exp.role}</h3>
+          <p class="timeline-sub">${exp.company} — <em>${exp.location}</em> | <span>${exp.period}</span></p>
+          <ul class="experience-bullets">
+            ${exp.bullets.map(b => `<li>${b}</li>`).join("")}
+          </ul>
+        </div>
       </div>
-    </div>
-  `).join("");
+    `).join("");
+  }
 }
 
 function renderProjects() {
   const container = document.getElementById("projects-grid");
-  container.innerHTML = portfolioData.projects.map(proj => `
-    <div class="interactive-project-card">
-      <div class="project-header">
-        <span class="platform-indicator">${proj.platform}</span>
-        <h3>${proj.title}</h3>
+  if (container) {
+    container.innerHTML = portfolioData.projects.map(proj => `
+      <div class="interactive-project-card">
+        <div class="project-header">
+          <span class="platform-indicator">${proj.platform}</span>
+          <h3 style="font-size: 1.2rem; margin-top: 0.2rem;">${proj.title}</h3>
+        </div>
+        <p style="font-size: 0.9rem; margin: 0.5rem 0 1rem 0;">${proj.desc}</p>
+        <div class="project-tags">
+          ${proj.tags.map(t => `<span class="tag">${t}</span>`).join("")}
+        </div>
       </div>
-      <p>${proj.desc}</p>
-      <div class="project-tags">
-        ${proj.tags.map(t => `<span class="tag">${t}</span>`).join("")}
-      </div>
-    </div>
-  `).join("");
+    `).join("");
+  }
 }
 
 function renderSkills() {
   const container = document.getElementById("skills-container");
-  let html = "";
-  for (const [category, list] of Object.entries(portfolioData.skills)) {
-    html += `
-      <div class="skill-category-group">
-        <h4>${category}</h4>
-        <div class="badge-cloud">
-          ${list.map(s => `<span class="skill-badge">${s}</span>`).join("")}
+  if (container) {
+    let html = "";
+    for (const [category, list] of Object.entries(portfolioData.skills)) {
+      html += `
+        <div class="skill-category-group" style="margin-bottom: 1.5rem;">
+          <h4 style="font-size: 0.95rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.5rem;">${category}</h4>
+          <div class="badge-cloud" style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+            ${list.map(s => `<span class="skill-badge">${s}</span>`).join("")}
+          </div>
         </div>
-      </div>
-    `;
+      `;
+    }
+    container.innerHTML = html;
   }
-  container.innerHTML = html;
 }
 
 // ==========================================
@@ -181,23 +198,29 @@ const toggleBtn = document.getElementById('theme-toggle');
 const html = document.documentElement;
 
 function updateIcon(theme) {
-  toggleBtn.innerHTML = theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+  if (toggleBtn) {
+    toggleBtn.innerHTML = theme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+  }
 }
 
 const savedTheme = localStorage.getItem('theme') || 'light';
 html.setAttribute('data-theme', savedTheme);
 updateIcon(savedTheme);
 
-toggleBtn.addEventListener('click', () => {
-  const current = html.getAttribute('data-theme');
-  const next = current === 'dark' ? 'light' : 'dark';
-  html.setAttribute('data-theme', next);
-  localStorage.setItem('theme', next);
-  updateIcon(next);
-});
+if (toggleBtn) {
+  toggleBtn.addEventListener('click', () => {
+    const current = html.getAttribute('data-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    updateIcon(next);
+  });
+}
 
 const menuBtn = document.getElementById('menu-toggle');
 const navMenu = document.getElementById('nav-menu');
 
-menuBtn.addEventListener('click', () => navMenu.classList.toggle('show'));
-navMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => navMenu.classList.remove('show')));
+if (menuBtn && navMenu) {
+  menuBtn.addEventListener('click', () => navMenu.classList.toggle('show'));
+  navMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => navMenu.classList.remove('show')));
+}
